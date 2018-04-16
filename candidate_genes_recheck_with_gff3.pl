@@ -2,7 +2,7 @@
 # this scrip is used for rotating gene name to gff3 gene name or its gene_synomym gene name
 use strict;
 die "perl $0 <untrans gene.list>\n" if @ARGV !=1;
-my $gff = "/catb/home/zhujingjing/RefDataBase/ref_GRCh37.p13_top_level.gff3";
+my $gff = "ref_GRCh37.p13_top_level.gff3";
 open my $gff_fh,$gff;
 my(%relate_hash,%alias_hash,%gene_hash,%aliss_gene_hash);
 while(<$gff_fh>){
