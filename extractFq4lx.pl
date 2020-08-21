@@ -104,4 +104,5 @@ sub extractfq{
 			next;
 		}
 	}
+	close $f1;close $f2;close $o1;close $o2;
 }
