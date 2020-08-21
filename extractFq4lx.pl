@@ -45,7 +45,7 @@ if($fq1=~/gz$/){
 	&checkfq($outdir,$fq1,$prefix);
 	my $readnum=`gzip -dc $fq1|wc -l`;
 	chomp($readnum);$readnum=~s/\r//;
-	if($readnum*2 < $extract_size){	#以防数据量超过原数据量
+	if($readnum/2 < $extract_size){	#以防数据量超过原数据量
 		die "the size input is larger than original data, please set a smaller number\n";
 	}elsif($readnum*2 == $extract_size){
 		die "oops, the size input is same as the original date, no need to extract\n";
@@ -58,7 +58,7 @@ if($fq1=~/gz$/){
 	&checkfq($outdir,$fq1,$prefix);
 	my $readnum=`wc -l $fq1`;
 	chomp($readnum);$readnum=~s/\r//;
-	if($readnum*2 < $extract_size){	#以防数据量超过原数据量
+	if($readnum/2 < $extract_size){	#以防数据量超过原数据量
 		die "the size input is larger than original data, please set a smaller number\n";
 	}elsif($readnum*2 == $extract_size){
 		die "oops, the size input is same as the original date, no need to extract\n";
